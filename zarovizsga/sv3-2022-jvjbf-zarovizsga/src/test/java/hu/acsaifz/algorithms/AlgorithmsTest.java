@@ -1,4 +1,3 @@
-/*
 package hu.acsaifz.algorithms;
 
 import org.junit.jupiter.api.Test;
@@ -12,28 +11,23 @@ class AlgorithmsTest {
     Algorithms algorithms = new Algorithms();
 
     @Test
-    void testCountMaximums() {
-        List<Integer> numbers = List.of(1, 3, 4, 4, 2, 3, 4, 1);
+    void testIsChainOfWordTrue() {
+        List<String> words = List.of("apple", "earth", "hint", "temple");
 
-        assertEquals(3, algorithms.countMaximums(numbers));
+        assertTrue(algorithms.isChainOfWords(words));
     }
 
     @Test
-    void testWithNegativeNumbers() {
-        List<Integer> numbers = List.of(-1, -3, -4, -4, -2, -3, -4, -1, -7, -3, -2, -2);
+    void testIsChainOfWordFalse() {
+        List<String> words = List.of("apple", "earth", "door", "temple");
 
-        assertEquals(2, algorithms.countMaximums(numbers));
+        assertFalse(algorithms.isChainOfWords(words));
     }
 
     @Test
-    void testWithOneNumber() {
-        List<Integer> numbers = List.of(8);
+    void testIsChainOfWordWithCase() {
+        List<String> words = List.of("apple", "Earth", "hint", "Temple");
 
-        assertEquals(1, algorithms.countMaximums(numbers));
+        assertTrue(algorithms.isChainOfWords(words));
     }
-
-    @Test
-    void testWithEmptyList() {
-        assertThrows(IllegalArgumentException.class, () -> algorithms.countMaximums(List.of()));
-    }
-}*/
+}
