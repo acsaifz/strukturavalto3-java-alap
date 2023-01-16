@@ -1,4 +1,3 @@
-/*
 package hu.acsaifz.datahandling;
 
 import org.junit.jupiter.api.Test;
@@ -17,4 +16,4 @@ class AnimalTest {
         assertEquals(12, animal.getCountOfAnimal());
         assertEquals(LocalDate.of(2022, 11, 11), animal.getDateOfObservation());
     }
-}*/
+}

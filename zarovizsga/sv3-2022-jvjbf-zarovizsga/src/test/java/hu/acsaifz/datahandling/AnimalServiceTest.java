@@ -1,15 +1,14 @@
-/*
 package hu.acsaifz.datahandling;
 
+import com.mysql.cj.jdbc.MysqlDataSource;
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mariadb.jdbc.MariaDbDataSource;
 
 import java.nio.file.Path;
-import java.sql.SQLException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AnimalServiceTest {
 
@@ -17,14 +16,10 @@ class AnimalServiceTest {
 
     @BeforeEach
     void init() {
-        MariaDbDataSource dataSource = new MariaDbDataSource();
-        try{
-            dataSource.setUrl("jdbc:mariadb://localhost:3306/mariadbtrainings?useUnicode=true");
-            dataSource.setUser("training");
-            dataSource.setPassword("training");
-        }catch (SQLException se){
-            throw new IllegalStateException("Cannot connect!", se);
-        }
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setUrl("jdbc:mysql://localhost:3306/exam");
+        dataSource.setUser("teszt");
+        dataSource.setPassword("teszt");
 
         Flyway flyway = Flyway.configure().cleanDisabled(false).dataSource(dataSource).load();
 
@@ -54,4 +49,4 @@ class AnimalServiceTest {
 
         assertEquals(26, animalService.countAllByAnimalType("Giraffe"));
     }
-}*/
+}
