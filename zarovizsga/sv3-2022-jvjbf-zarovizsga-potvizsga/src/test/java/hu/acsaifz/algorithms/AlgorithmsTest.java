@@ -1,4 +1,3 @@
-/*
 package hu.acsaifz.algorithms;
 
 import org.junit.jupiter.api.Test;
@@ -36,4 +35,4 @@ class AlgorithmsTest {
     void testWithEmptyList() {
         assertThrows(IllegalArgumentException.class, () -> algorithms.countMaximums(List.of()));
     }
-}*/
+}
