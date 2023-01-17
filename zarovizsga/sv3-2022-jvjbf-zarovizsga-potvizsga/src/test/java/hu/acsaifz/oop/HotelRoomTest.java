@@ -1,4 +1,3 @@
-/*
 package hu.acsaifz.oop;
 
 import org.junit.jupiter.api.Test;
@@ -40,4 +39,4 @@ class HotelRoomTest {
         assertEquals(40_000, apartment.getPrice());
 
     }
-}*/
+}

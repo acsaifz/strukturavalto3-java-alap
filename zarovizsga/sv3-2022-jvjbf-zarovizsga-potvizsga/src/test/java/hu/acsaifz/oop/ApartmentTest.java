@@ -1,4 +1,3 @@
-/*
 package hu.acsaifz.oop;
 
 import org.junit.jupiter.api.Test;
@@ -69,4 +68,4 @@ class ApartmentTest {
         CantRentException cre = assertThrows(CantRentException.class, () -> apartment.rent());
         assertEquals("Not free!", cre.getMessage());
     }
-}*/
+}

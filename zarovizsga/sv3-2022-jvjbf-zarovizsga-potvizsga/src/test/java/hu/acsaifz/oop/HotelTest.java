@@ -1,4 +1,3 @@
-/*
 package hu.acsaifz.oop;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -78,4 +77,4 @@ class HotelTest {
 
         assertEquals(List.of(124, 126), hotel.getFreeRoomNumbers().stream().sorted().toList());
     }
-}*/
+}
