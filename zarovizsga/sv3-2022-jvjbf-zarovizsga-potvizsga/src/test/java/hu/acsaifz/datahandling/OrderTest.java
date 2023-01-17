@@ -1,4 +1,3 @@
-/*
 package hu.acsaifz.datahandling;
 
 import org.junit.jupiter.api.Test;
@@ -15,4 +14,4 @@ class OrderTest {
         assertEquals(1, order.getProductCount());
         assertEquals(1000, order.getPricePerProduct());
     }
-}*/
+}

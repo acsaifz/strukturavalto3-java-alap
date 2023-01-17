@@ -1,17 +1,16 @@
-/*
 package hu.acsaifz.datahandling;
 
+import com.mysql.cj.jdbc.MysqlDataSource;
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mariadb.jdbc.MariaDbDataSource;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class OrderServiceTest {
 
@@ -19,14 +18,10 @@ class OrderServiceTest {
 
     @BeforeEach
     void init() {
-        MariaDbDataSource dataSource = new MariaDbDataSource();
-        try {
-            dataSource.setUrl("jdbc:mariadb://localhost:3306/mariadbtrainings?useUnicode=true");
-            dataSource.setUser("training");
-            dataSource.setPassword("training");
-        } catch (SQLException se) {
-            throw new IllegalStateException("Cannot connect!", se);
-        }
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setUrl("jdbc:mysql://localhost:3306/exam");
+        dataSource.setUser("teszt");
+        dataSource.setPassword("teszt");
 
         Flyway flyway = Flyway.configure().cleanDisabled(false).dataSource(dataSource).load();
 
@@ -79,4 +74,4 @@ class OrderServiceTest {
         assertEquals(Set.of("Mobile", "Laptop", "Hairdrier"), result.keySet());
         assertEquals(List.of(2, 4, 6), result.values().stream().sorted().toList());
     }
-}*/
+}
